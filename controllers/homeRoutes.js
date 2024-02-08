@@ -6,7 +6,7 @@ router.get('/', async(req,res)=>{
 
 
 router.get('/login', async(req, res)=>{
-    res.render('logIn')
+    res.render('layouts/logIn', {layout: 'logIn', hideNavbar: true})
    
 })
 
