@@ -26,9 +26,12 @@ BlogPost.init(
             allowNull: false,
         },
         comments:{
-
+            type: DataTypes.STRING,
+            allowNull: true
         },
         authorName:{
+            type: DataTypes.STRING,
+            allowNull: false
 
         },
 

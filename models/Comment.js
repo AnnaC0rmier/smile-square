@@ -22,6 +22,8 @@ Comment.init(
             allowNull: false,
         },
         authorName:{
+            type: DataTypes.STRING,
+            allowNull: false
 
         },
 
