@@ -18,20 +18,24 @@ BlogPost.init(
             allowNull: false,
         },
         content:{
-            type:DataTypes.STRING,
+            type:DataTypes.TEXT,
             allowNull: false,
         },
         date: {
             type: DataTypes.DATE,
+            defaultValue: DataTypes.NOW,
             allowNull: false,
         },
         comments:{
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: true
         },
-        authorName:{
-            type: DataTypes.STRING,
-            allowNull: false
+        UserName:{
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'User',
+                key: 'id',
+            }
 
         },
 
