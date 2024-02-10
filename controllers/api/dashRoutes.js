@@ -13,4 +13,16 @@ router.post('/blogpost', async (req, res) => {
     }
 });
 
+router.post('/comment', async (req,res) => {
+    try{
+        const newComment = await Comment.create({
+            ...req.body, 
+        });
+        res.status(200).json(newComment);
+    }
+    catch (error){
+        console.error('error')
+    }
+})
+
 module.exports = router;

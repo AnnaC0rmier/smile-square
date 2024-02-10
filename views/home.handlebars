@@ -6,9 +6,14 @@
         <h5 class="card-title">{{post.title}}</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{post.date}}</h6>
         <p class="card-text">{{post.content}}</p>
-        
+         {{#each comments as |comment|}}
+        <div class="card">
+                    <div class="card-body">{{comment.content}}
+                    </div>
+                </div>
+        {{/each}}
         <div class="input-group mb-3">
-          <input class="form-control form-control-sm border-dark" type="text" placeholder="Leave a comment">
+          <input class="form-control form-control-sm border-dark comment" type="text" placeholder="Leave a comment">
           <div class="input-group-append">
             <button class="btn btn-outline-dark" type="button">Submit</button>
           </div>
@@ -17,6 +22,7 @@
     </div>
   {{/each}} 
 </div>
+<script src="/js/comment.js"></script>
 </body>
 
 
