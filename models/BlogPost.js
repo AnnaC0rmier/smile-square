@@ -34,7 +34,7 @@ BlogPost.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'User',
-                key: 'id',
+                key: 'userName',
             }
 
         },
