@@ -1,37 +1,31 @@
-console.log('working');
-
-const submitComment = async (event) => {
+const submitComment = async(event)=>{
     console.log('button clicked');
     event.preventDefault();
 
-    const comment = document.querySelector('.comment')
+    const comment = document.querySelector('.comment');
+    
 
-    if (comment) {
-        try {
-            const response = await fetch('/api/dash/comment', {
+    if (comment){
+        try{
+            const response = await fetch ('/api/comments', 
+            {
                 method: 'POST',
-                body: JSON.stringify({ comment }),
-                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({content}),
+                headers: {'Content-Type': 'application/json'},
+
             });
 
             if (response.ok) {
-                document.location.replace('/');
-            } else {
-                const responseData = await response.json();
-                console.error('Error during fetch:', responseData);
-                alert('Something went wrong. See console for details.');
+             document.location.replace('/');
             }
-        } catch (error) {
-            console.error('Error during fetch:', error);
-            alert('An error occurred while processing your request.');
+           
         }
-    } else {
-        alert('error submitting comment');
+
+        catch (error){
+            console.error('issue posting comment')
+        }
     }
 };
 
-const commentButtons = document.querySelectorAll('.btn');
+document.querySelector('.btn').addEventListener('click', submitComment)
 
-commentButtons.forEach((button) => {
-    button.addEventListener('click', submitComment);
-});

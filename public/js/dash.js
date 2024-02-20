@@ -16,7 +16,7 @@ const submitPost = async (event) => {
             if (response.ok) {
                 document.location.replace('/');
             } else {
-                const responseData = await response.json(); // Assuming server returns JSON
+                const responseData = await response.json();
                 console.error('Error during fetch:', responseData);
                 alert('Something went wrong. See console for details.');
             }
