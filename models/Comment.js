@@ -19,11 +19,16 @@ Comment.init(
         },
         date: {
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: true,
+            defaultValue: new Date()
         },
         authorName:{
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            references: {
+                model: 'User',
+                key: 'userName'
+            }
 
         },
 
